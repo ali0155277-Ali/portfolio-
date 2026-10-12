@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Inline favicon: no extra file needed, removes the favicon.svg 404 -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='42' font-size='28' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EAG%3C/text%3E%3C/svg%3E" />
+  <meta name="description"
+    content="Ali Gabriel Ali – AI Engineer | Data Scientist | Data Engineer. Turning data into decisions with intelligence and precision." />
+  <meta name="keywords"
+    content="Ali Gabriel Ali, AI Engineer, Data Scientist, Data Engineer, Machine Learning, Portfolio" />
+  <meta name="author" content="Ali Gabriel Ali" />
+  <meta property="og:title" content="Ali Gabriel Ali – AI Engineer &amp; Data Scientist" />
+  <meta property="og:description" content="Turning Data into Decisions with Intelligence &amp; Precision." />
+  <meta property="og:type" content="website" />
+  <title>Ali Gabriel Ali – AI Engineer &amp; Data Scientist</title>
+
+  <!-- Safe theme init: localStorage can throw on some phones / in-app browsers -->
+  <script>
+    (function () {
+      var isDark = true;
+      try {
+        isDark = window.localStorage.getItem('theme') !== 'light';
+      } catch (e) {}
+      document.documentElement.classList.toggle('dark', isDark);
+      document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+    })();
+  </script>
+
+  <!-- On-screen error reporter: if the app fails to start, show the real error instead of a blank page -->
+  <script>
+    (function () {
+      var shown = false;
+      function show(msg) {
+        if (shown) return;
+        var root = document.getElementById('root');
+        if (root && root.childNodes.length > 0) return;
+        shown = true;
+        var box = document.createElement('pre');
+        box.style.cssText = 'white-space:pre-wrap;word-break:break-word;margin:0;padding:16px;font:13px/1.5 monospace;color:#fecaca;background:#1f0a0a;min-height:100vh';
+        box.textContent = 'Startup error:\n\n' + msg;
+        document.body.appendChild(box);
+      }
+      window.addEventListener('error', function (e) {
+        var where = e.filename ? '\n' + e.filename + ':' + e.lineno : '';
+        setTimeout(function () { show((e.message || 'Unknown error') + where); }, 1500);
+      });
+      window.addEventListener('unhandledrejection', function (e) {
+        var r = e.reason;
+        setTimeout(function () { show('Promise rejection: ' + (r && r.message ? r.message : String(r))); }, 1500);
+      });
+    })();
+  </script>
+
+  <!-- Non-blocking Google Fonts: page renders even if fonts are slow or blocked -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  </noscript>
+</head>
+
+<body style="margin:0">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
